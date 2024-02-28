@@ -1,0 +1,58 @@
+<!-- Notepad.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizações!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #notepad {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #notepad-content {
+      margin-bottom: 15px;
+    }
+
+    #close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 24px;
+      transition: transform 0.3s ease, color 0.3s ease; /* Adicionado efeito de transição na cor */
+    }
+
+    #close-button:hover {
+      transform: scale(1.2);
+      color: #ff4500; /* Cor vermelha ao passar o mouse */
+    }
+  </style>
+</head>
+<body>
+  <!-- Conteúdo do bloco de notas virtual -->
+  <div id="notepad">
+    <div id="notepad-content">Atualização de Fevereiro/Março de 2024 - 28/02/2024: 2.5.0 STABLE</div>
+    <!-- Adicionar botão "X" -->
+    <a href="index.html">
+      <div id="close-button">&#10006;</div>
+    </a>
+  </div>
+</body>
+</html>
+

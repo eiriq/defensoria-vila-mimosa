@@ -1,0 +1,169 @@
+<!-- SERVICES.HTML -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços DEF</title>
+  <style>
+    body {
+      background-color: #000; /* Cor preta */
+      color: white;
+      font-family: 'Roboto', sans-serif; /* Fonte utilizada na página principal */
+      text-align: center;
+      margin: 0;
+      height: 100vh; /* 100% da altura da viewport */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Alinhamento ao topo da página */
+      padding-top: 20px; /* Espaçamento adicional no topo */
+      position: relative; /* Adicionado para posicionar o botão X */
+    }
+
+    h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+      margin-top: 10px; /* Ajuste para alinhar o título um pouco abaixo */
+    }
+
+    .divider {
+      width: 50%; /* Largura da linha divisória */
+      margin: 10px auto; /* Centraliza a linha abaixo dos botões */
+      border-top: 2px solid white; /* Cor e espessura da linha */
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px; /* Espaço entre o título e os botões */
+    }
+
+    .service-button {
+      background-color: #4CAF50; /* Cor verde */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .service-button:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    .service-button:hover:before {
+      width: 150%;
+      opacity: 1;
+    }
+
+    .service-button:hover {
+      background-color: #45a049; /* Tom mais escuro de verde ao passar o mouse */
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    .tooltip {
+      visibility: hidden;
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      top: 50%; /* Posiciona no meio verticalmente */
+      left: calc(100% + 10px); /* Posiciona ao lado direito do botão */
+      transform: translate(0, -50%); /* Centraliza verticalmente */
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-button:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Botão X */
+    .close-button {
+      position: absolute;
+      top: 10px; /* Ajuste para posicionar no canto superior direito */
+      right: 10px; /* Ajuste para posicionar no canto superior direito */
+      cursor: pointer;
+      color: white;
+      font-size: 30px; /* Ajuste para tornar o "X" mais largo */
+      transition: transform 0.3s ease; /* Adiciona transição suave ao passar o mouse sobre o botão "X" */
+    }
+
+    .close-button:hover {
+      transform: scale(1.2); /* Efeito de escala ao passar o mouse sobre o botão "X" */
+      color: #ff4500; /* Cor laranja ao passar o mouse */
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <h1>Escolha seu serviço Defensoria:</h1>
+
+  <!-- Botões -->
+  <div class="divider"></div>
+  <div class="button-container">
+    <button class="service-button" onclick="redirectToInss()"> Inss
+      <div class="tooltip">Esta é a calculadora INSS. Calcule rapidamente o valor do INSS contribuído pelo assistido. Atualizado para a tabela e salário mínimo de 2024.</div>
+    </button>
+    <div class="divider"></div>
+    <button class="service-button" onclick="redirectToImages()">
+      Imagens
+      <div class="tooltip">Converta rapidamente imagens em PDF.</div>
+    </button>
+    <div class="divider"></div>
+    <button class="service-button" onclick="redirectToCalculator()">
+      Calculadora
+      <div class="tooltip">Uma calculadora rápida e eficiente para ajudar em cálculos de grandes extratos bancários.</div>
+    </button>
+    <div class="divider"></div>
+    <button class="service-button" onclick="redirectToDefIA()"> DefIA
+      <div class="tooltip">Uma IA (chatbot ajudante) que pode te ajudar em questões diversas dos assistidos ou da defensoria.</div>
+    </button>
+  </div>
+
+  <!-- Botão X -->
+  <a href="index.html">
+    <div class="close-button">&#10006;</div>
+  </a>
+
+  <!-- Funções de redirecionamento -->
+  <script>
+    function redirectToInss() {
+      window.location.href = 'https://www.calcule.net/trabalhista/calculo-de-inss/';
+    }
+
+    function redirectToImages() {
+      window.location.href = 'https://www.ilovepdf.com/pt/jpg_para_pdf';
+    }
+
+    function redirectToCalculator() {
+      window.location.href = 'https://www.calculadora-online.xyz/';
+    }
+
+    function redirectToDefIA() {
+      window.location.href = 'https://groq.com/';
+    }
+  </script>
+</body>
+</html>
+

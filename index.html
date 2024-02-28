@@ -1,0 +1,227 @@
+<!-- INDEX 1 -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vila Mimosa</title>
+  <style>
+    body {
+      background-color: #000; /* Cor preta */
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+    }
+
+    .subtitle {
+      color: #4CAF50;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 25px; /* Alterado para tornar mais arredondado */
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .button:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    .button:hover:before {
+      width: 150%;
+      opacity: 1;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    .divider {
+      width: 50%; /* Ajuste a largura da linha divisória conforme necessário */
+      margin: 20px auto; /* Centraliza a linha abaixo dos botões */
+      border-top: 2px solid white; /* Define a cor e espessura da linha */
+    }
+
+    .logo {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      max-width: 21%; /* Reduzido o tamanho da imagem para 50% */
+      height: auto;
+    }
+
+    #about-us-button {
+      position: fixed;
+      bottom: 30px; /* Ajustado para descer o botão "Sobre Nós" */
+      left: 10px;
+      z-index: 999;
+      background-color: #d32f2f; /* Alterado para vermelho */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px; /* Alterado para tornar mais arredondado */
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #about-us-button:hover {
+      background-color: #b71c1c; /* Alterado para uma versão mais neutra do vermelho */
+      box-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
+      transform: scale(1.1);
+    }
+
+    #watermark {
+      position: fixed;
+      bottom: 10px; /* Ajustado para descer a marca d'água */
+      right: 10px;
+      z-index: 999;
+      font-family: 'Poppins', sans-serif; /* Alterado para uma fonte mais moderna */
+      font-size: 18px; /* Ajustado o tamanho da fonte */
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #watermark:hover {
+      transform: scale(1.1);
+    }
+
+    .purple-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .purple-button {
+      background-color: #9c27b0; /* Cor roxa claro */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .purple-button:hover {
+      background-color: #7b1fa2; /* Tom mais escuro de roxo ao passar o mouse */
+      transform: scale(1.1);
+    }
+
+    /* Adiciona a classe fade-in para a animação */
+    .fade-in {
+      animation: fadeInAnimation 2s ease-in-out;
+    }
+
+    @keyframes fadeInAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"> <!-- Adicionada a fonte Poppins -->
+</head>
+<body class="fade-in">
+  <img src="defensorialogo.png" alt="Defensoria Logo" class="logo">
+  <h1>Defensoria Pública: Vila Mimosa</h1>
+  <div class="subtitle">Escolha seu serviço</div>
+  <div class="button-container">
+    <a href="https://online.defensoria.sp.def.br/atendimento/atendimentoInicial/tabs?search=true&exibirBuscaPorCpf=true" class="button" target="_blank">DOL</a>
+    <a href="#" class="button" onclick="openTwoTabs()">DOL/FILA</a>
+    <a href="https://online.defensoria.sp.def.br/fila/painel/status?estrutura.id=240&reload=true" class="button" target="_blank">FILA</a>
+  </div>
+
+  <!-- Linha divisória -->
+  <div class="divider"></div>
+
+  <!-- Botão "Sobre Nós" -->
+  <button id="about-us-button" onclick="redirectToAboutUs()">Sobre Nós</button>
+
+  <!-- Marca d'água no Canto Inferior Direito -->
+  <div id="watermark">2.5.0 - Conferir atualização</div>
+
+  <!-- Botões "Serviços" e "Distrações" -->
+  <div class="purple-button-container">
+    <button class="purple-button" onclick="redirectToServices()">Serviços</button>
+    <div style="width: 2px; height: 20px; background-color: white; margin: 0 10px;"></div> <!-- Linha diagonal separadora -->
+    <button class="purple-button" onclick="redirectToDistractions()">Distrações</button>
+  </div>
+
+  <!-- Adicionar funcionalidade ao clicar nos botões "Serviços" e "Distrações" -->
+  <script>
+    function redirectToServices() {
+      // Adicione a URL desejada para a página de serviços
+      window.open('services.html', '_blank');
+    }
+
+    function redirectToDistractions() {
+      // Adicione a URL desejada para a página de distrações
+      window.open('https://drive.google.com/file/d/1yTaPJAFWmoAQhRg7lQBBnafJcOwqHZya/view', '_blank');
+    }
+  </script>
+
+  <!-- Adicionar funcionalidade ao clicar na marca d'água -->
+  <script>
+    // Abrir bloco de notas virtual em uma nova guia
+    document.getElementById('watermark').addEventListener('click', function() {
+      window.open('notepad.html', '_blank');
+    });
+  </script>
+
+  <!-- Adicionar funcionalidade aos botões -->
+  <script>
+    // Função para abrir duas guias simultaneamente
+    function openTwoTabs() {
+      window.open('https://online.defensoria.sp.def.br/atendimento/atendimentoInicial/tabs?search=true&exibirBuscaPorCpf=true', '_blank');
+      window.open('https://online.defensoria.sp.def.br/fila/painel/status?estrutura.id=240&reload=true', '_blank');
+    }
+
+    // Função para redirecionar para a página "DETAILS HTML"
+    function redirectToAboutUs() {
+      window.open('detailshtml.html', '_blank');
+    }
+  </script>
+</body>
+</html>
+

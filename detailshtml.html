@@ -1,0 +1,94 @@
+<!-- DETAILS HTML -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes</title>
+  <style>
+    body {
+      background-color: black; /* Fundo preto */
+      color: white; /* Cor do texto */
+      font-family: 'Roboto', sans-serif; /* Fonte moderna (Roboto) */
+      text-align: center; /* Centralizar texto */
+      margin: 0; /* Remover margens padrão do body */
+      overflow: hidden; /* Evitar barras de rolagem */
+      position: relative; /* Permite posicionar elementos filhos de acordo com este elemento pai */
+    }
+
+    h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna para o título */
+      font-size: 24px; /* Tamanho do título aumentado */
+      margin-top: 30px; /* Ajuste do espaçamento acima do título */
+    }
+
+    .divider {
+      width: 50%; /* Ajuste a largura da linha divisória conforme necessário */
+      margin: 20px auto; /* Centraliza a linha abaixo do título */
+      border-top: 2px solid white; /* Define a cor e espessura da linha */
+    }
+
+    #profile-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px; /* Ajuste do espaçamento acima do container de imagens */
+    }
+
+    .profile-image {
+      max-width: 150px; /* Largura máxima das imagens */
+      height: auto;
+    }
+
+    #read-button {
+      margin-top: 20px; /* Espaçamento acima do botão "Ler" */
+      padding: 10px 20px; /* Preenchimento interno do botão "Ler" */
+      background-color: #3498db; /* Cor de fundo do botão "Ler" */
+      color: white; /* Cor do texto do botão "Ler" */
+      border: none; /* Remover borda do botão "Ler" */
+      border-radius: 25px; /* Bordas arredondadas do botão "Ler" */
+      font-size: 16px; /* Tamanho da fonte do botão "Ler" */
+      cursor: pointer; /* Adiciona cursor ao passar sobre o botão */
+      transition: transform 0.3s ease; /* Adiciona transição suave ao passar o mouse sobre o botão */
+    }
+
+    #read-button:hover {
+      transform: scale(1.1); /* Efeito de escala ao passar o mouse sobre o botão "Ler" */
+    }
+
+    #close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 30px; /* Ajuste para tornar o "X" mais largo */
+      transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição suave ao passar o mouse sobre o botão "X" */
+    }
+
+    #close-button:hover {
+      transform: scale(1.2); /* Efeito de escala ao passar o mouse sobre o botão "X" */
+      color: #ff4500; /* Cor laranja ao passar o mouse */
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+  <h1>Estagiários da Administração:</h1>
+  <div class="divider"></div>
+  <div id="profile-container">
+    <img class="profile-image" src="kauan.png" alt="Kauan's Profile">
+    <img class="profile-image" src="eve.png" alt="Eve's Profile">
+    <img class="profile-image" src="mauro.png" alt="Mauro's Profile">
+  </div>
+  <a href="https://drive.google.com/drive/folders/1ooKvD5FxDFX75VGC-shRE5Tyh9sLeZLA?usp=drive_link">
+    <button id="read-button">Ler</button>
+  </a>
+
+  <!-- Adiciona o botão "X" para voltar ao index.html -->
+  <a href="index.html">
+    <div id="close-button">&#10006;</div>
+  </a>
+</body>
+</html>
+
